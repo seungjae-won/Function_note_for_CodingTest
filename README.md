@@ -3,3 +3,7 @@
 
 
 ## 함수 목록
+#### 1. digit sum : 자연수가 input으로 주어질 때 각 자리수 합 구하기
+#### 2. column_extract : 확인 하고 싶은 column(int)과 matrix(list)가 주어졌을 때 해당 column(list) return
+#### 3. following_view : list 내 value 중 해당 조건을 만족하는 다음 index 혹은 value return
+#### 4. any_all_list : list 내 value가 모두 0(False)인지, 혹은 0(False)인 value가 있는지 any, all 함수를 통해 True or False return
