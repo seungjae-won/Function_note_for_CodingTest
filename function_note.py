@@ -57,3 +57,79 @@ def any_all_list(list):
     # list 내 value가 하나라도 0(False)이면 False, 모두 True이면 True
     return all(list)
 
+
+
+# 출처 : https://brownbears.tistory.com/468 
+'''
+    @brief : 10진법의 숫자와 변환하고자 하는 n진법(base)을 input으로 주면 변환 결과 return
+
+    @date : 2020/12/21 업데이트
+
+    @return : result (int)
+
+    @param : number (int), base (int)
+'''
+def numeral_system(number, base):
+    NOTATION = '0123456789ABCDEF'
+    q,r = divmod(number, base)
+    n = NOTATION[r]
+    return numeral_system(q, base)+n if q else n
+
+    # 위 경우와 반대로 n진수를 10진수로 변환하기 위해서 사용하는 함수
+    int(str('n진법 수 - str type input'), int('base - int type의 현재 진법 input'))
+    
+
+
+'''
+    @brief : graph와 start가 주어졌을 때 dfs 수행
+
+    @date : 2020/12/23 업데이트
+
+    @return : visited (list)
+
+    @param : graph (dict), start (int)
+'''
+def dfs(graph, start):
+    visited = []
+    stack = [start]
+
+    while stack:
+        n = stack.pop()
+        if n not in visited:
+            visited.append(n)
+            if n in graph:
+                temp = list(set(graph[n]) - set(visited))
+                temp.sort(reverse=True)
+                stack += temp
+                
+    return visited
+
+'''
+    @brief : graph와 start가 주어졌을 때 bfs 수행
+
+    @date : 2020/12/23 업데이트
+
+    @return : visited (list)
+
+    @param : graph (dict), start (int)
+'''
+from collections import deque
+
+def bfs(graph, start):
+
+    visited = [start]
+    
+    queue = deque([start])
+    
+    while queue:
+        v = queue.popleft()
+    
+        for i in graph[v]:
+            if not i in visited:
+                queue.append(i)
+                visited.append(i)
+                
+    return visited
+                
+                
+
