@@ -7,3 +7,6 @@
 #### 2. column_extract : 확인 하고 싶은 column(int)과 matrix(list)가 주어졌을 때 해당 column(list) return
 #### 3. following_view : list 내 value 중 해당 조건을 만족하는 다음 index 혹은 value return
 #### 4. any_all_list : list 내 value가 모두 0(False)인지, 혹은 0(False)인 value가 있는지 any, all 함수를 통해 True or False return
+#### 5. numeral_system : 10진수를 변환하고 싶은 base진수를 입력하면 해당 base진수로 변환
+#### 6. dfs : 깊이우선탐색 구현, graph와 시작점(start) input
+#### 7. bfs : 너비우선탐색 구현, graph와 시작점(start) input
