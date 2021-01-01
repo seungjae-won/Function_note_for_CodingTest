@@ -130,6 +130,71 @@ def bfs(graph, start):
                 visited.append(i)
                 
     return visited
-                
-                
 
+'''
+    @brief : 주어진 num에 대해서 소수판별 수행 - 시간복잡도 sqrt(N)
+
+    @date : 2020/12/31 업데이트
+
+    @return : bool
+
+    @param : num (int)
+'''
+def isPrime(num):
+    if num==1:
+        return False
+    else:
+        for i in range(2, int(num**0.5)+1):
+            if num%i == 0:
+                return False
+        return True
+                
+'''
+    @brief : 주어진 num에 이하에 대해서 소수판별 수행
+
+    @date : 2020/12/31 업데이트
+
+    @return : eratos (list)
+
+    @param : num (int)
+'''
+import math
+def eratos_Prime(num):
+
+    eratos = [1] * (2 * num + 1)
+    eratos[0] = 0
+    eratos[1] = 0
+
+    for i in range(2, int(math.sqrt(len(eratos)))):
+        if eratos[i]:
+            for j in range(i + i, len(eratos), i):
+                eratos[j] = 0
+    return eratos
+
+
+# 출처 : https://roseline124.github.io/algorithm/2019/03/22/Algorithm-baekjoon-2108.html
+'''
+    @brief : 주어진 num_list에 대해서 최빈값을 return
+
+    @date : 2021/1/1 업데이트
+
+    @return : mod (int)
+
+    @param : num_list (list)
+'''
+
+from collections import Counter
+
+def mode(num_list):
+    mode_dict = Counter(num_list)
+    modes = mode_dict.most_common()    
+    
+    if len(num_list) > 1 : 
+        if modes[0][1] == modes[1][1]:
+            mod = modes[1][0]
+        else : 
+            mod = modes[0][0]
+    else : 
+        mod = modes[0][0]
+
+    return mod
