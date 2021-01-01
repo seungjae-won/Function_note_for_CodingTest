@@ -10,3 +10,6 @@
 #### 5. numeral_system : 10진수를 변환하고 싶은 base진수를 입력하면 해당 base진수로 변환
 #### 6. dfs : 깊이우선탐색 구현, graph와 시작점(start) input
 #### 7. bfs : 너비우선탐색 구현, graph와 시작점(start) input
+#### 8. isPrime : 주어진 num에 대해서 소수판별 수행 
+#### 9. eratos_Prime : 주어진 num 이하의 수에 대해서 모두 소수판별 수행
+#### 10. mode : 주어진 num_list에 대해서 최빈값 return
