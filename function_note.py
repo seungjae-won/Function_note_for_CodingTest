@@ -198,3 +198,38 @@ def mode(num_list):
         mod = modes[0][0]
 
     return mod
+
+'''
+    @brief : graph와 출발점 start가 주어질 때 dijkstra 알고리즘 구현
+
+    @date : 2021/1/6 업데이트
+
+    @return : dp (list)
+
+    @param : grpah (dict), start (int)
+'''
+
+import heapq
+import sys
+
+def dijkstra(graph, start):
+    inf = sys.maxsize
+    dp = [inf]*len(graph)
+    dp[start] = 0
+    heap = []
+    heapq.heappush(heap, (0,start))
+    
+    while heap:
+        weight, current = heapq.heappop(heap)
+        
+        if dp[current] < weight:
+            continue
+        
+        for w, next_n in graph[current]:
+            next_w = w+weight
+            
+            if next_w < dp[next_n]:
+                dp[next_n] = next_w
+                heapq.heappush(heap, (next_w,next_n))
+    
+    return dp
